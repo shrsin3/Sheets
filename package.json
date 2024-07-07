@@ -1,9 +1,10 @@
 {
   "homepage": "https://shrsin3.github.io/Sheets",
   "name": "sheets",
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.0",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc && vite build"
   },
