@@ -4,5 +4,6 @@ import { univerPlugin } from "@univerjs/vite-plugin";
 export default defineConfig({
   plugins: [
     univerPlugin()
-  ]
+  ],
+  base: "/Sheets/"
 });
