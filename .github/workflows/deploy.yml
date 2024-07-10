@@ -36,6 +36,10 @@ jobs:
       # build the react app
       - name: Build
         run: npm run build
+
+      - name: Verify build output
+        run: ls -la dist 
+        
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
