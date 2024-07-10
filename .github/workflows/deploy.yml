@@ -40,12 +40,15 @@ jobs:
       - name: Verify build output
         run: ls -la dist 
         
-      - name: Upload Artifacts
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: 'github-pages'
-          path: dist/**/*
-
+          # Upload dist folder
+          path: './dist'
+          
       # deploy the react app to github pages
       - name: Deploy
         uses: actions/deploy-pages@v4
