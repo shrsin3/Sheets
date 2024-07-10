@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheets</title>
-    <script>
-    const eventList = [];
+    <script type="module">
+
+        let date = new Date();
+        date = date.toLocaleString("en-CA", {
+            timeZone: "America/Vancouver",
+            timeZoneName: "long",
+        });
+        const eventList = [{"appName": "Sheets", "date": date}];
 
     window.addEventListener("click", (event) => {
         let x = event.pageX;  // Horizontal
@@ -15,11 +21,14 @@
         console.log(x,y, time);
         console.log(event.target);
         console.log(eventList);
+        const apiKey = import.meta.env.VITE_APP_SECRET;
+        console.log(apiKey)
     });
 
     document.addEventListener("visibilitychange", ()=>{
         if (document.hidden) {
-            fetch('http://localhost:5000/api/sheetsData',{
+            const apiKey = import.meta.env.VITE_APP_SECRET;
+            fetch(apiKey,{
                 method: "post",
                 headers: {
                     "Content-type": "application/json"
