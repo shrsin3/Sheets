@@ -11,14 +11,7 @@
             timeZone: "America/Vancouver",
             timeZoneName: "long",
         });
-        const eventList = [{"appName": "Sheets", "date": date}];
-
-      const fetchURL = async () =>{
-      const url = import.meta.env.VITE_APP_SECRET;
-      const response = await fetch(url)
-      const resp =  await response.json()
-      console.log(resp);
-    }
+        const eventList = [{"appName": "Sheets", "date": date}];\
 
     window.addEventListener("click", (event) => {
         let x = event.pageX;  // Horizontal
@@ -28,7 +21,6 @@
         console.log(x,y, time);
         console.log(event.target);
         console.log(eventList);
-        fetchURL();
         
     });
 
