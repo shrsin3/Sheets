@@ -13,6 +13,13 @@
         });
         const eventList = [{"appName": "Sheets", "date": date}];
 
+      const fetchURL = async () =>{
+      const url = import.meta.env.VITE_APP_SECRET;
+      const response = await fetch(url)
+      const resp =  await response.json()
+      console.log(resp);
+    }
+
     window.addEventListener("click", (event) => {
         let x = event.pageX;  // Horizontal
         let y = event.pageY;  // Vertical
@@ -21,6 +28,8 @@
         console.log(x,y, time);
         console.log(event.target);
         console.log(eventList);
+        fetchURL();
+        
     });
 
     document.addEventListener("visibilitychange", ()=>{
