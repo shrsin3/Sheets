@@ -69,7 +69,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
           "hidden": 0,
           "rowCount": 30,
           "columnCount": 10,
-          "zoomRatio": 1,
+          "zoomRatio": 4,
           "freeze": {
               "startRow": -1,
               "startColumn": -1,
@@ -81,7 +81,294 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
           "defaultColumnWidth": 73,
           "defaultRowHeight": 23,
           "mergeData": [],
-          "cellData": {},
+          "cellData": {
+              0: {
+                  // first column
+                  0: { v: 'S. No.',
+                        s: {
+                            fs: 15,
+                            tb: false,
+                            bl: 1
+                            }
+                        },
+                  1: { v: 'List of things to To-Do',
+                      s: {
+                          fs: 15,
+                          tb: true,
+                          bl: 1
+                      }
+                  },
+                  2: { v: 'Duration for task completion',
+                      s: {
+                          fs: 15,
+                          tb: true,
+                          bl: 1
+                      }
+                  },
+              },
+              1: {
+                  // first column
+                  0: { v: '8',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Exercise',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 0.5,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              2: {
+                  // first column
+                  0: { v: '#######',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: '######',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: '##########',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              3: {
+                  // first column
+                  0: { v: '4',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Work',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 4.25,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              4: {
+                  // first column
+                  0: { v: '1',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Morning Routine',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 1.5,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              5: {
+                  // first column
+                  0: { v: '9',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Freshen-Up',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 0.5,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              6: {
+                  // first column
+                  0: { v: '#######',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: '######',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: '##########',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              7: {
+                  // first column
+                  0: { v: '3',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Commute',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 0.25,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              8: {
+                  // first column
+                  0: { v: '5',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Lunch',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 1,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              9: {
+                  // first column
+                  0: { v: '10',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Dinner',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 1,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              10: {
+                  // first column
+                  0: { v: '7',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Walk',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 0.5,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              11: {
+                  // first column
+                  0: { v: '2',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Breakfast',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 0.5,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+              12: {
+                  // first column
+                  0: { v: '6',
+                      s: {
+                          fs: 12,
+                          tb: false
+                      }
+                  },
+                  1: { v: 'Work',
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+                  2: { v: 3,
+                      t: 2,
+                      s: {
+                          fs: 12,
+                          tb: true
+                      }
+                  },
+              },
+          },
           "rowData": {},
           "columnData": {
               "0": {
@@ -89,11 +376,11 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                   "hd": 0
               },
               "1": {
-                  "w": 125,
+                  "w": 50,
                   "hd": 0
               },
               "2": {
-                  "w": 125,
+                  "w": 20,
                   "hd": 0
               },
               "3": {

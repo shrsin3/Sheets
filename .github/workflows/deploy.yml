@@ -35,6 +35,8 @@ jobs:
 
       # build the react app
       - name: Build
+        env:
+          MY_CONSTANT: ${{ secrets.MY_CONSTANT }}
         run: npm run build
 
       - name: Verify build output
