@@ -5,9 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheets</title>
     <script type="module">
+        let helpButtonWait = 60
+        let startTime = new Date().getTime();
+        let remainingTime;
+
+        const helpTimer = setInterval(handleHelpTimer, 1000);
+
+        function handleHelpTimer(){
+            helpButtonWait = helpButtonWait-1;
+            // console.log("Help Timer Called")
+            if(helpButtonWait > 9){
+                let helpButton = document.getElementById("get-help")
+                helpButton.innerHTML = "Get help in 00:"+ helpButtonWait;
+                helpButton.disabled = true;
+                helpButton.style.backgroundColor = "#808080"
+                helpButton.style.color = "white"
+            } else if(helpButtonWait !== 0){
+                let helpButton = document.getElementById("get-help")
+                helpButton.innerHTML = "Get help in 00:0"+ helpButtonWait;
+                helpButton.disabled = true;
+                helpButton.style.backgroundColor = "#808080"
+                helpButton.style.color = "white"
+            }else {
+                let helpButton = document.getElementById("get-help")
+                helpButton.innerHTML = "Help";
+                helpButton.disabled = false;
+                clearInterval(helpTimer);
+                helpButton.style.backgroundColor = "#8B44A2"
+                helpButton.style.color = "white"
+                helpButton.style.cursor = "pointer"
+            }
+            // console.log(helpButtonWait)
+
+        }
+        document.getElementById('get-help').addEventListener('click', ()=>{
+            let pauseTime = new Date().getTime();
+            console.log(pauseTime - startTime);
+            clearTimeout(automaticSave);
+            let timeDone = pauseTime - startTime
+            remainingTime = 480000 - timeDone;
+            document.getElementById('help-document').style.display = 'flex';
+        })
+
+        document.getElementById('close-button-toolbar').addEventListener('click', ()=>{
+            document.getElementById('help-document').style.display = 'none';
+            document.getElementById('get-help').style.display = 'none';
+            console.log(remainingTime);
+            setTimeout(async () => {
+                await savingData();
+            }, remainingTime);
 
 
-        setTimeout(async () => {
+        })
+
+        let automaticSave = setTimeout(async () => {
             await savingData();
         }, 480000);
 
@@ -31,11 +82,28 @@
             pushToEventList(event)
         });
 
-        window.addEventListener("mousedown", (event) => {
+        // window.addEventListener("mousedown", (event) => {
+        //     event.preventDefault();
+        //     console.log("Mouse Down")
+        //     pushToEventList(event)
+        // });
+
+        window.addEventListener("pointerdown", (event) => {
+            event.preventDefault();
+            console.log("Mouse Down")
             pushToEventList(event)
-        });
+        })
+
+        window.addEventListener("pointerup", (event) => {
+            event.preventDefault();
+            console.log("Mouse Up")
+            pushToEventList(event)
+        })
+
+
 
         window.addEventListener("mouseup", (event) => {
+            event.preventDefault();
             pushToEventList(event)
         });
 
@@ -155,10 +223,10 @@
 
             try {
                 const uploadResult = await uploadToS3();
-                alert('Upload successful!');
+                // alert('Upload successful!');
             } catch (error) {
                 console.error('Error uploading data:', error);
-                alert('Failed to upload data.');
+                // alert('Failed to upload data.');
             } finally {
                 document.getElementById('loadingOverlay').style.display = 'none';
                 document.getElementById('nextOverlay').style.display = 'flex';
@@ -351,8 +419,31 @@
   <body>
   <div id="loadingOverlay">Saving, please wait...</div>
   <div id="nextOverlay">Please click the Stop Sharing button below...</div>
-  <div id="save-button">
-  <button name="save" id="save-data" aria-label="button" role="button">Save</button>
+  <div id="help-document">
+      <div id="doc-toolbar">
+          <div id="help-document-toolbar">
+              <div id="close-button-toolbar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-x-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                  </svg>
+              </div>
+          </div>
+          <div id="doc-source">
+              <embed src="./src/SheetsTask.pdf#toolbar=0" height="500" width="80%" />
+          </div>
+      </div>
+  </div>
+  <div id="header">
+      <div>
+          <h3 id="task-heading">Task Objective</h3>
+          <p>Refine the spreadsheet by resizing columns, removing irrelevant rows, reorganizing tasks,
+              and calculating their average duration.</p>
+      </div>
+      <div id="save-button">
+          <button name="help" id="get-help" aria-label="button" role="button">Help</button>
+          <button name="save" id="save-data" aria-label="button" role="button">Next</button>
+      </div>
   </div>
   <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
