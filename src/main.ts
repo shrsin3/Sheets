@@ -106,7 +106,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              1: {
+              11: {
                   // first column
                   0: { v: '8',
                       s: {
@@ -149,7 +149,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              3: {
+              12: {
                   // first column
                   0: { v: '4',
                       s: {
@@ -171,7 +171,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              4: {
+              1: {
                   // first column
                   0: { v: '1',
                       s: {
@@ -193,7 +193,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              5: {
+              9: {
                   // first column
                   0: { v: '9',
                       s: {
@@ -236,7 +236,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              7: {
+              4: {
                   // first column
                   0: { v: '3',
                       s: {
@@ -258,7 +258,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              8: {
+              5: {
                   // first column
                   0: { v: '5',
                       s: {
@@ -280,7 +280,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              9: {
+              10: {
                   // first column
                   0: { v: '10',
                       s: {
@@ -302,7 +302,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              10: {
+              8: {
                   // first column
                   0: { v: '7',
                       s: {
@@ -324,7 +324,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              11: {
+              3: {
                   // first column
                   0: { v: '2',
                       s: {
@@ -346,7 +346,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
-              12: {
+              7: {
                   // first column
                   0: { v: '6',
                       s: {
