@@ -38,6 +38,7 @@ jobs:
         run: npm ci
       - name: Replace placeholders with secrets
         run:  |
+            echo ${{ secrets.MY_CONSTANT }}
             sed -i "s|PLACEHOLDER_MY_CONSTANT|${{ secrets.MY_CONSTANT }}|g" .env
       - name: Build
         run: npm run build
