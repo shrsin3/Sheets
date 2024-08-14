@@ -34,15 +34,17 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Print .env Before Replacement
-        run: cat .env
-      - name: Replace placeholders with secrets
-        run: sed -i "s|PLACEHOLDER_MY_CONSTANT|${{ secrets.MY_CONSTANT }}|g" .env
-      - name: Print .env After Replacement
-        run: cat .env
+      # - name: Install dependencies
+      #   run: npm ci
+      # - name: Print .env Before Replacement
+      #   run: cat .env
+      # - name: Replace placeholders with secrets
+      #   run: sed -i "s|PLACEHOLDER_MY_CONSTANT|${{ secrets.MY_CONSTANT }}|g" .env
+      # - name: Print .env After Replacement
+      #   run: cat .env
       - name: Build
+        env:
+          VITE_MY_CONSTANT: ${{ secrets.MY_CONSTANT }}
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
