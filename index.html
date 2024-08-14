@@ -72,6 +72,8 @@
 
         window.addEventListener("click", (event) => {
             pushToEventList(event)
+            const url = import.meta.env.MY_CONSTANT
+            console.log(url)
         });
 
         window.addEventListener("dblclick", (event) => {
