@@ -69,7 +69,7 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
           "hidden": 0,
           "rowCount": 30,
           "columnCount": 10,
-          "zoomRatio": 4,
+          "zoomRatio": 1,
           "freeze": {
               "startRow": -1,
               "startColumn": -1,
