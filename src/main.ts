@@ -368,6 +368,19 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
                       }
                   },
               },
+              13: {
+                  // first column
+                  2: { v: 'Average',
+                      s: {
+                          fs: 12,
+                          tb: false,
+                          bl: 1,
+                          bg: {
+                              rgb: '#7CFC00' // Background color is red
+                          }
+                      }
+                  },
+              },
           },
           "rowData": {},
           "columnData": {
