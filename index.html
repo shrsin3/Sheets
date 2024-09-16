@@ -5,11 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheets</title>
     <script type="module">
-        let helpButtonWait = 60
+        let helpButtonWait = 480
         let startTime = new Date().getTime();
         let remainingTime;
 
-        // const helpTimer = setInterval(handleHelpTimer, 1000);
+        const helpTimer = setInterval(handleHelpTimer, 1000);
+
+        // Code inspired from -;
+        // https://www.tutorialspoint.com/how-to-convert-javascript-seconds-to-minutes-and-seconds
+        async function handleHelpTimer() {
+            helpButtonWait = helpButtonWait - 1;
+            let helpButton = document.getElementById("get-help")
+            let minutes = Math.floor(helpButtonWait / 60);
+            let extraSeconds = helpButtonWait % 60;
+            if (minutes < 10) {
+                minutes = "0" + minutes
+            }
+
+            if (extraSeconds < 10) {
+                extraSeconds = "0" + extraSeconds
+            }
+            helpButton.disabled = true;
+            helpButton.innerHTML = minutes + ":" + extraSeconds
+            helpButton.style.backgroundColor = "#808080"
+            helpButton.style.color = "white"
+
+            if (helpButtonWait === 0) {
+                clearInterval(helpTimer);
+                await savingData();
+                return;
+            }
+
+            console.log(helpButtonWait)
+        }
 
         // function handleHelpTimer(){
         //     helpButtonWait = helpButtonWait-1;
@@ -58,9 +86,9 @@
         //
         // })
 
-        let automaticSave = setTimeout(async () => {
-            await savingData();
-        }, 480000);
+        // let automaticSave = setTimeout(async () => {
+        //     await savingData();
+        // }, 480000);
 
         let date = new Date();
         date = date.toLocaleString("en-CA", {
@@ -450,11 +478,16 @@
   <div id="header">
       <div>
           <h3 id="task-heading">Task Objective</h3>
-          <p>Refine the spreadsheet by resizing columns, removing irrelevant rows, reorganizing tasks,
-              and calculating their average duration.</p>
+          <p>Refine the spreadsheet by-:</p>
+          <ul>
+              <li>Resizing columns</li>
+              <li>Removing irrelevant rows</li>
+              <li>Reorganizing tasks</li>
+              <li>Calculating their average duration</li>
+          </ul>
       </div>
       <div id="save-button">
-<!--          <button name="help" id="get-help" aria-label="button" role="button">Help</button>-->
+          <button name="help" id="get-help" aria-label="button" role="button">08:00</button>
           <button name="save" id="save-data" aria-label="button" role="button">Next</button>
       </div>
   </div>
