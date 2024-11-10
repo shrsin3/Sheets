@@ -78,15 +78,15 @@ univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
           },
           "scrollTop": 0,
           "scrollLeft": 0,
-          "defaultColumnWidth": 73,
+          "defaultColumnWidth": 95,
           "defaultRowHeight": 23,
           "mergeData": [],
           "cellData": {
               0: {
                   // first column
-                  0: { v: 'S. No.',
+                  0: { v: 'Task Number',
                         s: {
-                            fs: 15,
+                            fs: 14,
                             tb: false,
                             bl: 1
                             }
